@@ -1,0 +1,22 @@
+{
+  "name": "comp-464-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseRivas1998/COMP-464-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoseRivas1998/COMP-464-Project/issues"
+  },
+  "homepage": "https://github.com/JoseRivas1998/COMP-464-Project#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
