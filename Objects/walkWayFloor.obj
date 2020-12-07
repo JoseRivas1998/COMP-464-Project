@@ -1,6 +1,6 @@
 # Blender v2.90.1 OBJ File: 'newRoom.blend'
 # www.blender.org
-mtllib gymFloor.mtl
+mtllib walkWayFloor.mtl
 o person_Cube
 v 0.243095 2.016662 -4.013760
 v 0.243095 0.016662 -4.013760
