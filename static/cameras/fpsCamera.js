@@ -1,15 +1,11 @@
 class FPSCamera extends PerspectiveCamera
 {
-	constructor(gl, programArray=[], aspect=1, viewRadians=Math.PI/4, near=0.01, far=1000.0, moveSpeed=0.1, turnSpeed=0.015, position=new Vector(), rotation=new Quaternion())
+	constructor(gl, programArray=[], aspect=1, viewRadians=Math.PI/4, near=0.01, far=1000.0, canvasWidth, moveSpeed=0.1, turnSpeed= 1, position=new Vector(), rotation=new Quaternion())
 	{
 		super(gl, programArray, aspect, viewRadians, near, far, position, rotation);
 
 		this.moveSpeed = moveSpeed;
 		this.turnSpeed = turnSpeed;
-
-		// bind event handlers for user input
-		window.addEventListener("keydown", event => this.onKeyDown(event));
-		window.addEventListener("keyup", event => this.onKeyUp(event));
 
 		// trackers for 2d rotation (no "roll" ==> no z rotation)
 		this.rotX = 0;
@@ -23,8 +19,6 @@ class FPSCamera extends PerspectiveCamera
 		this.A = false;
 		this.S = false;
 		this.D = false;
-		this.Q = false;
-		this.E = false;
 
 		// arrow keys "is pressed down"
 		this.L = false;
@@ -37,14 +31,10 @@ class FPSCamera extends PerspectiveCamera
 		this.keycodeA = 65;
 		this.keycodeS = 83;
 		this.keycodeD = 68;
-		this.keycodeQ = 81;
-		this.keycodeE = 69;
 
-		// keycodes arrow keys
-		this.keycodeL = 37;
-		this.keycodeU = 38;
-		this.keycodeR = 39;
-		this.keycodeDo = 40;
+		this.mouseDX = 0;
+		this.mouseDY = 0;
+
 	}
 
 	onKeyDown(event)
@@ -62,24 +52,6 @@ class FPSCamera extends PerspectiveCamera
 				break;
 			case this.keycodeD:
 				this.D = true;
-				break;
-			case this.keycodeQ:
-				this.Q = true;
-				break;
-			case this.keycodeE:
-				this.E = true;
-				break;
-			case this.keycodeL:
-				this.L = true;
-				break;
-			case this.keycodeU:
-				this.U = true;
-				break;
-			case this.keycodeR:
-				this.R = true;
-				break;
-			case this.keycodeDo:
-				this.Do = true;
 				break;
 			default:
 				break;
@@ -102,24 +74,6 @@ class FPSCamera extends PerspectiveCamera
 			case this.keycodeD:
 				this.D = false;
 				break;
-			case this.keycodeQ:
-				this.Q = false;
-				break;
-			case this.keycodeE:
-				this.E = false;
-				break;
-			case this.keycodeL:
-				this.L = false;
-				break;
-			case this.keycodeU:
-				this.U = false;
-				break;
-			case this.keycodeR:
-				this.R = false;
-				break;
-			case this.keycodeDo:
-				this.Do = false;
-				break;
 			default:
 				break;
 		}
@@ -139,21 +93,10 @@ class FPSCamera extends PerspectiveCamera
 		}
 
 		dx *= this.moveSpeed;
-		dx = this.localRight.scale(new Vector(dx, dx, dx), false);
+		dx = this.localRight.scale(new Vector(dx, 0, dx), false);
 
-		// up/down
 		let dy = 0;
-		if (this.Q)
-		{
-			dy -= 1;
-		}
-		if (this.E)
-		{
-			dy += 1;
-		}
-
-		dy *= this.moveSpeed;
-		dy = this.localUp.scale(new Vector (dy, dy, dy), false);
+		dy = this.localUp.scale(new Vector (dy, 0, dy), false);
 
 		// forward/back
 		let dz = 0;
@@ -167,59 +110,32 @@ class FPSCamera extends PerspectiveCamera
 		}
 
 		dz *= this.moveSpeed;
-		dz = this.forward.scale(new Vector(dz, dz, dz), false);
+		dz = this.forward.scale(new Vector(dz, 0, dz), false);
 
 		dx.add(dy);
 		dx.add(dz);
 		this.translate(dx);
 	}
 
-	turn()
-	{
-		let dy = 0;
-		if (this.L)
-		{
-			dy += 1;
-		}
-		if (this.R)
-		{
-			dy -= 1;
-		}
-
-		dy *= this.turnSpeed;
-
-		let dx = 0;
-		if (this.U)
-		{
-			dx += 1;
-		}
-		if (this.Do)
-		{
-			dx -= 1;
-		}
-
-		dx *= this.turnSpeed;
-
-		if (dx != 0 || dy != 0)
-		{
+	onMouseMove = (mouseDX, mouseDY) => {
+		this.mouseDX = mouseDX;
+		this.mouseDY = mouseDY;
+		const dy = -this.linMap(this.mouseDX, -window.innerWidth, window.innerWidth, -this.turnSpeed, this.turnSpeed);
+		const dx = -this.linMap(this.mouseDY, -window.innerHeight, window.innerHeight, -this.turnSpeed, this.turnSpeed);
+		
+		if (dx !== 0 || dy !== 0) {
 			this.rotX += dx;
-			if (this.rotX > this.rotLimitX)
-			{
+			if (this.rotX > this.rotLimitX) {
 				this.rotX = this.rotLimitX;
-			}
-			else if (this.rotX < -this.rotLimitX)
-			{
+			} else if (this.rotX < -this.rotLimitX) {
 				this.rotX = -this.rotLimitX;
 			}
 
 			this.rotY += dy;
-			if (this.rotY > this.rotLimitY)
-			{
-				this.rotY -= 2*this.rotLimitY
-			}
-			else if(this.rotY < -this.rotLimitY)
-			{
-				this.rotY += 2*this.rotLimitY;
+			if (this.rotY > this.rotLimitY) {
+				this.rotY -= 2 * this.rotLimitY
+			} else if (this.rotY < -this.rotLimitY) {
+				this.rotY += 2 * this.rotLimitY;
 			}
 
 			const rot = new Quaternion(this.rotX, 1, 0, 0);
@@ -227,12 +143,12 @@ class FPSCamera extends PerspectiveCamera
 
 			this.setRotation(rot);
 		}
-	}
+	};
 
+	linMap = (x, fromMin, fromMax, toMin, toMax) => toMin + (((x - fromMin) * (toMax - toMin)) / (fromMax - fromMin));
 	update()
 	{
 		this.move();
-		this.turn();
 		super.update();
 	}
 

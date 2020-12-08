@@ -5,11 +5,11 @@ const RunDemo = function (filemap)
 
 	// get canvas, set dimensions to fill browser window
 	const canvas = document.getElementById('the_canvas');
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
+	canvas.width = window.innerWidth - 20;
+	canvas.height = window.innerHeight - 20;
 
 	// get WebGL context, confirm...
-	const gl = canvas.getContext('webgl');
+	let gl = canvas.getContext('webgl');
 
 	if (!gl)
 	{
@@ -60,10 +60,30 @@ const RunDemo = function (filemap)
 		aspect,
 		fieldOfView,
 		nearClip,
-		farClip
+		farClip,
 	);
-	camera.translate(new Vector(5, 3, 7));
+	camera.translate(new Vector(0, 0, 7));
 	camera.lookAt(new Vector(), new Vector(0, 1, 0));
+
+	const mouseCallBack = event => {
+		camera.onMouseMove(event.movementX, event.movementY);
+	};
+
+	window.addEventListener("keydown", event => camera.onKeyDown(event));
+	window.addEventListener("keyup", event => camera.onKeyUp(event));
+
+	canvas.addEventListener("click", event => {
+		canvas.requestPointerLock();
+	});
+
+	document.addEventListener("pointerlockchange", event => {
+		if (document.pointerLockElement) {
+			document.addEventListener("mousemove", mouseCallBack, false);
+		} else {
+			canvas.blur();
+			document.removeEventListener("mousemove", mouseCallBack, false);
+		}
+	});
 
 	// set ambient light parameters
 	const ambientLight = new Vector(0.4, 0.5, 0.4);
