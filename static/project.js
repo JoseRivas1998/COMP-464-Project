@@ -160,6 +160,8 @@ const RunDemo = (scene) => {
 
         time = Date.now() - startTime;
 
+        const cameraLight = lightManager.pointLights[lightManager.pointLights.length - 1];
+        cameraLight.setPosition(camera.position);
         lightManager.update();
         camera.update();
 
@@ -173,6 +175,11 @@ const RunDemo = (scene) => {
         requestAnimationFrame(main);
     }
     requestAnimationFrame(main);
+
+    const music = document.createElement('audio');
+    music.src = "music.mp3";
+    music.play();
+
 }
 
 const InitDemo = async () => {
