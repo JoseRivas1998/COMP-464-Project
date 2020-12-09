@@ -1,0 +1,408 @@
+{
+  "shaders": {
+    "uv": {
+      "vert": "shaders/vert.uv.glsl",
+      "frag": "shaders/frag.uv.glsl"
+    },
+    "rgb": {
+      "vert": "shaders/vert.rgb.glsl",
+      "frag": "shaders/frag.rgb.glsl"
+    }
+  },
+  "uvmodels": {
+    "benches1": {
+      "model": "models/benches1.obj",
+      "material": {
+        "shader": "uv",
+        "imageID": "benchesColor",
+        "flipTexture": true,
+        "diffuse": 0.7,
+        "specular": 0.3,
+        "ambient": 1,
+        "shininess": 0.1
+      },
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": {
+          "theta": 0,
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "normalized": true
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    "benches2": {
+      "model": "models/benches2.obj",
+      "material": {
+        "shader": "uv",
+        "imageID": "benchesColor",
+        "flipTexture": true,
+        "diffuse": 0.7,
+        "specular": 0.3,
+        "ambient": 1,
+        "shininess": 0.1
+      },
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": {
+          "theta": 0,
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "normalized": true
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    "entryBooth": {
+      "model": "models/entryBooth.obj",
+      "material": {
+        "shader": "uv",
+        "imageID": "entranceStand",
+        "flipTexture": true,
+        "diffuse": 0.7,
+        "specular": 0.3,
+        "ambient": 1,
+        "shininess": 0.1
+      },
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": {
+          "theta": 0,
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "normalized": true
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    "entryDoorDecor": {
+      "model": "models/entryDoorDecor.obj",
+      "material": {
+        "shader": "uv",
+        "imageID": "doorDecor",
+        "flipTexture": true,
+        "diffuse": 0.7,
+        "specular": 0.3,
+        "ambient": 1,
+        "shininess": 0.1
+      },
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": {
+          "theta": 0,
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "normalized": true
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    "entryFloor": {
+      "model": "models/entryFloor.obj",
+      "material": {
+        "shader": "uv",
+        "imageID": "checkerfloor",
+        "flipTexture": true,
+        "diffuse": 0.7,
+        "specular": 0.3,
+        "ambient": 1,
+        "shininess": 0.1
+      },
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": {
+          "theta": 0,
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "normalized": true
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    "entryPokeMarts": {
+      "model": "models/entryPokeMarts.obj",
+      "material": {
+        "shader": "uv",
+        "imageID": "PokeMarts",
+        "flipTexture": true,
+        "diffuse": 0.7,
+        "specular": 0.3,
+        "ambient": 1,
+        "shininess": 0.1
+      },
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": {
+          "theta": 0,
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "normalized": true
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    "entryWalls": {
+      "model": "models/entryWalls.obj",
+      "material": {
+        "shader": "uv",
+        "imageID": "MainWalls",
+        "flipTexture": true,
+        "diffuse": 0.7,
+        "specular": 0.3,
+        "ambient": 1,
+        "shininess": 0.1
+      },
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": {
+          "theta": 0,
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "normalized": true
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    "gymEntranceDecor": {
+      "model": "models/gymEntranceDecor.obj",
+      "material": {
+        "shader": "uv",
+        "imageID": "doorDecor",
+        "flipTexture": true,
+        "diffuse": 0.7,
+        "specular": 0.3,
+        "ambient": 1,
+        "shininess": 0.1
+      },
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": {
+          "theta": 0,
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "normalized": true
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    "gymFloor": {
+      "model": "models/gymFloor.obj",
+      "material": {
+        "shader": "uv",
+        "imageID": "gymFloor",
+        "flipTexture": true,
+        "diffuse": 0.7,
+        "specular": 0.3,
+        "ambient": 1,
+        "shininess": 0.1
+      },
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": {
+          "theta": 0,
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "normalized": true
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    "gymWalls": {
+      "model": "models/gymWalls.obj",
+      "material": {
+        "shader": "uv",
+        "imageID": "MainWalls",
+        "flipTexture": true,
+        "diffuse": 0.7,
+        "specular": 0.3,
+        "ambient": 1,
+        "shininess": 0.1
+      },
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": {
+          "theta": 0,
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "normalized": true
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    "photograph": {
+      "model": "models/photograph.obj",
+      "material": {
+        "shader": "uv",
+        "imageID": "donaldAndGoofy",
+        "flipTexture": true,
+        "diffuse": 0.7,
+        "specular": 0.3,
+        "ambient": 1,
+        "shininess": 0.1
+      },
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": {
+          "theta": 0,
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "normalized": true
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    }
+  },
+  "camera": {
+    "startPos": {
+      "x": -0.3588963777181066,
+      "y": 4,
+      "z": -95
+    },
+    "startLook": {
+      "target": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "up": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      }
+    },
+    "nearClip": 0.01,
+    "farClip": 1000.0
+  },
+  "ambientLight": {
+    "r": 0.4,
+    "g": 0.5,
+    "b": 0.4
+  },
+  "pointLights": [
+    {
+      "position": {
+        "x": -0.3588963777181066,
+        "y": 1,
+        "z": -90
+      },
+      "diffuse": {
+        "r": 10,
+        "g": 10,
+        "b": 40
+      },
+      "specular": {
+        "r": 100,
+        "g": 400,
+        "b": 100
+      },
+      "ambient": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      }
+    }
+  ],
+  "directionalLights": [
+
+  ]
+}

@@ -1,6 +1,6 @@
 class FPSCamera extends PerspectiveCamera
 {
-	constructor(gl, programArray=[], aspect=1, viewRadians=Math.PI/4, near=0.01, far=1000.0, canvasWidth, moveSpeed=0.1, turnSpeed= 1, position=new Vector(), rotation=new Quaternion())
+	constructor(gl, programArray=[], aspect=1, viewRadians=Math.PI/4, near=0.01, far=1000.0, canvasWidth, moveSpeed=1, turnSpeed= 1, position=new Vector(), rotation=new Quaternion())
 	{
 		super(gl, programArray, aspect, viewRadians, near, far, position, rotation);
 
