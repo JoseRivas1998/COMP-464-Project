@@ -273,10 +273,10 @@
         "position": {
           "x": 0,
           "y": 0,
-          "z": 0
+          "z": -39.9614
         },
         "rotation": {
-          "theta": 0,
+          "theta": 3.14159,
           "x": 1,
           "y": 0,
           "z": 0,
@@ -333,6 +333,192 @@
       },
       "transform": {
         "position": {
+          "x": 3.5,
+          "y": 1,
+          "z": -80.5
+        },
+        "rotation": {
+          "theta": 1.5707963267948966192313216916398,
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "normalized": true
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    "walkWayFloor": {
+      "model": "models/walkWayFloor.obj",
+      "material": {
+        "shader": "uv",
+        "imageID": "walkWayPath",
+        "flipTexture": true,
+        "diffuse": 0.7,
+        "specular": 0.3,
+        "ambient": 1,
+        "shininess": 0.1
+      },
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": {
+          "theta": 0,
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "normalized": true
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    "walkWayOuterFence": {
+      "model": "models/walkWayOuterFence.obj",
+      "material": {
+        "shader": "uv",
+        "imageID": "walkwayFences",
+        "flipTexture": true,
+        "diffuse": 0.7,
+        "specular": 0.3,
+        "ambient": 1,
+        "shininess": 0.1
+      },
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": {
+          "theta": 0,
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "normalized": true
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    "walkWayPathFence": {
+      "model": "models/walkWayPathFence.obj",
+      "material": {
+        "shader": "uv",
+        "imageID": "walkwayFences",
+        "flipTexture": true,
+        "diffuse": 0.7,
+        "specular": 0.3,
+        "ambient": 1,
+        "shininess": 0.1
+      },
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": {
+          "theta": 0,
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "normalized": true
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    "gymRoof": {
+      "model": "models/gymRoof.obj",
+      "material": {
+        "shader": "uv",
+        "imageID": "roofColor",
+        "flipTexture": true,
+        "diffuse": 0.7,
+        "specular": 0.3,
+        "ambient": 1,
+        "shininess": 0.1
+      },
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": {
+          "theta": 0,
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "normalized": true
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    "entryRoof": {
+      "model": "models/entryRoof.obj",
+      "material": {
+        "shader": "uv",
+        "imageID": "roofColor",
+        "flipTexture": true,
+        "diffuse": 0.7,
+        "specular": 0.3,
+        "ambient": 1,
+        "shininess": 0.1
+      },
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "rotation": {
+          "theta": 0,
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "normalized": true
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    "entrySign": {
+      "model": "models/entrySign.obj",
+      "material": {
+        "shader": "uv",
+        "imageID": "WallTexturev2",
+        "flipTexture": true,
+        "diffuse": 0.7,
+        "specular": 0.3,
+        "ambient": 1,
+        "shininess": 0.1
+      },
+      "transform": {
+        "position": {
           "x": 0,
           "y": 0,
           "z": 0
@@ -351,11 +537,12 @@
         }
       }
     }
+
   },
   "camera": {
     "startPos": {
       "x": -0.3588963777181066,
-      "y": 4,
+      "y": 3.5,
       "z": -95
     },
     "startLook": {
